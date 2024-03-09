@@ -33,7 +33,7 @@ public class WebSecurityConfiguration {
         //noinspection removal
         return httpSecurity.csrf().disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/register", "/authentication").permitAll()
+                .requestMatchers("/register", "/authentication", "/api/login-details").permitAll()
                 .and()
                 .authorizeHttpRequests().requestMatchers("/api/***")
                 .authenticated()
